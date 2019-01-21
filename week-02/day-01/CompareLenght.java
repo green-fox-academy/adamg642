@@ -8,7 +8,7 @@ public class CompareLenght {
 
     static int[] p1 = {1, 2, 3};
     static int[] p2 = {4, 5};
-    
+
     public static void main(String[] args) {
         if (p1.length < p2.length){
             System.out.print("print");
