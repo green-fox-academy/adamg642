@@ -13,7 +13,7 @@ public class Sum {
         int len = reader.nextInt();
         int a = 0;
         int basenum = 0;
-        
+
         while ( a != len){
            int numToAdd = reader.nextInt();
            basenum = basenum + numToAdd;
