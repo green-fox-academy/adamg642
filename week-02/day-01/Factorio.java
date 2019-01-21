@@ -18,7 +18,7 @@ public class Factorio {
     public static void main(String[] args) {
 
         System.out.println(factorio(5));
-        
+
     }
 
 
