@@ -16,11 +16,11 @@ public class SolarSystem{
     }
 
     public static String putSaturn(ArrayList<String> list){
-        
+
         String outPuthino = "";
         String[] outList = new String[list.size()];
         list.add(5,"Saturn");
-        outList = list.toArray(outList);
+        /*outList = list.toArray(outList);
 
 
         for (int i = 0; i < outList.length ; i++) {
@@ -30,7 +30,17 @@ public class SolarSystem{
             } else {
                 outPuthino = outPuthino + outList[i];
             }
+        }*/
+
+        for (int i = 0; i < list.size() ; i++){
+            if (i > 0) {
+                outPuthino = outPuthino + " , " + list.get(i);
+            } else {
+                outPuthino = outPuthino + list.get(i);
+            }
+
         }
+
 
         return outPuthino;
     }
