@@ -8,6 +8,6 @@ public class UrlFixer {
         url = url.replace("bots","odds");
         url = url.substring(0,5)+":"+url.substring(5,url.length());
         System.out.println(url);
-       
+
     }
 }
