@@ -21,7 +21,7 @@ public class FleetOfThings {
         fleet.add(removeObs);
         fleet.add(standUp);
         fleet.add(eatLunch);
-        
+
         System.out.println(fleet);
     }
 }
