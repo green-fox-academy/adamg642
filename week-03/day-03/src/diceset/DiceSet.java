@@ -63,5 +63,5 @@ public class DiceSet {
         System.out.println(diceSet.getCurrent());
     }
 
-   
+
 }
