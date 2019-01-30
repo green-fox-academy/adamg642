@@ -21,7 +21,7 @@ public class Main {
                 System.out.println(pokemonOfAsh.get(i).name);
             }
         }
-        
+
     }
 
     private static List<Pokemon> initializePokemons() {
