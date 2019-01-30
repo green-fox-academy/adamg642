@@ -9,7 +9,7 @@ public class Sharpie {
     public static void main(String[] args) {
 
         Sharpie sharp = new Sharpie("white",3.3f);
-        
+
     }
 
     public Sharpie(String color,float width){
@@ -19,7 +19,7 @@ public class Sharpie {
     }
 
     public void use (){
-        inkAmount++;
+        inkAmount--;
 
     }
 
