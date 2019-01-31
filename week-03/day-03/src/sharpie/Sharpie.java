@@ -1,9 +1,9 @@
 package sharpie;
 
 public class Sharpie {
-    String color;
-    float width;
-    float inkAmount = 100;
+    public String color;
+    public float width;
+    public float inkAmount = 0;
 
 
     public static void main(String[] args) {
@@ -16,6 +16,12 @@ public class Sharpie {
         this.color = color;
         this.width = width;
 
+    }
+
+    public Sharpie(String color,float width,float inkAmount){
+        this.color = color;
+        this.width = width;
+        this.inkAmount = inkAmount;
     }
 
     public void use (){
