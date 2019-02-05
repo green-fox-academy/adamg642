@@ -21,8 +21,12 @@ public class Student extends Person {
     }
     @Override
     public void introduce () {
-        System.out.println("Hi, my name is "+name+" "+age );
+        System.out.println("Hi, my name is "+name+" "+age +"  " + gender+" "+previousOrganizatin+"  "+skippedDays);
 
+    }
+
+    public void skipDays(int numberOfDays){
+        skippedDays += numberOfDays;
     }
 
 }

@@ -6,7 +6,7 @@ public class Sponsor extends Person {
 
 
     public Sponsor(String name,int age,String gender,String company){
-        super();
+        super(name,age,gender);
         this.company = company;
         this.hiredStudents = 0;
 
