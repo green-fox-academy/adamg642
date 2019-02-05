@@ -15,6 +15,9 @@ public class Main {
         hhzz.introduce();
         Mentor gg = new Mentor();
         gg.introduce();
+        Sponsor sponsor = new Sponsor("GG0",44,"famela","Apple");
+        sponsor.hire();
+        sponsor.introduce();
 
     }
 
