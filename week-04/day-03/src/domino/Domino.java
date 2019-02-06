@@ -2,13 +2,19 @@ package domino;
 
 import java.util.Arrays;
 
-public class Domino {
+public class Domino implements Comparable<Domino> {
     private final int left;
     private final int right;
 
     public Domino(int left, int right) {
         this.left = left;
         this.right = right;
+    }
+    @Override
+    public int compareTo(Domino o){
+
+        return o.left > left ? -1 : 1;
+
     }
 
     public int getLeftSide() {
