@@ -13,7 +13,7 @@ public class Domino implements Comparable<Domino> {
     @Override
     public int compareTo(Domino o){
 
-        return o.left > left ? -1 : 1;
+        return o.left < left ? -1 : 1;
 
     }
 
