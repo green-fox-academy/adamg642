@@ -51,4 +51,14 @@ public class AppleTest {
 
     }
 
+    @Test
+    public void annagramTest(){
+        Apple apple = new Apple();
+
+        assertTrue(apple.Annagram("alma","angyal"));
+
+    }
+
+
+
 }
