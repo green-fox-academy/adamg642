@@ -2,6 +2,7 @@ import jdk.internal.dynalink.linker.LinkerServices;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class Apple {
@@ -19,8 +20,33 @@ public class Apple {
        // applele.sum(myList);
         System.out.println( applele.sum(myList));
         System.out.println(applele.Annagram("sajt","sakk"));
+        System.out.println(applele.countLetter("hello bello alma"));
 
         }
+
+
+    public HashMap<Character,Integer> countLetter(String text){
+        HashMap<Character,Integer> myDictionary = new HashMap<>();
+
+        char[] charz = text.toCharArray();
+
+        for (Character charr: charz
+             ) {
+            if (!myDictionary.containsKey(charr)){
+                myDictionary.put(charr,1);
+
+            }
+            else {
+                myDictionary.put(charr,myDictionary.get(charr)+1);
+            }
+
+        }
+
+        return myDictionary;
+    }
+
+
+
 
 
     public boolean Annagram (String firstString , String secondString){

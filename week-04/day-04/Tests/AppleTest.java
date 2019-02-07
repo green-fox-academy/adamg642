@@ -3,6 +3,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -56,6 +57,21 @@ public class AppleTest {
         Apple apple = new Apple();
 
         assertTrue(apple.Annagram("alma","angyal"));
+
+    }
+
+    @Test
+    public void letterCounterTest(){
+        Apple apple = new Apple();
+        HashMap<Character,Integer> myHashMap = new HashMap<Character, Integer>(){{
+            put('h',1);
+            put('e',1);
+            put('l',2);
+            put('o',1);
+
+
+        }};
+        assertEquals(apple.countLetter("hello"),myHashMap);
 
     }
 
