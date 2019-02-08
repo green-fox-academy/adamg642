@@ -21,8 +21,29 @@ public class Apple {
         System.out.println( applele.sum(myList));
         System.out.println(applele.Annagram("sajt","sakk"));
         System.out.println(applele.countLetter("hello bello alma"));
+        System.out.println(applele.fibonacciNum(4));
 
         }
+
+
+
+    public int fibonacciNum (int index){
+        //int fibonacciSequance = 0;
+        int firsnum = 0;
+        int secnum = 1;
+        int  allSum = 0;
+
+        for (int i = 0; i < index ; i ++){
+            allSum = firsnum + secnum;
+            firsnum = secnum;
+            secnum = allSum;
+
+
+        }
+
+
+        return allSum;
+    }
 
 
     public HashMap<Character,Integer> countLetter(String text){
