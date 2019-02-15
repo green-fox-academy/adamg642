@@ -22,8 +22,7 @@ public class Restaurant {
 
             if (invertory.get(key) - all > 0) {
 
-            }
-            else {
+            } else {
                 decider = false;
             }
 
