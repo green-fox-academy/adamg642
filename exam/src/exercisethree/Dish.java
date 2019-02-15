@@ -12,7 +12,8 @@ public class Dish {
         this.ingredients = ingredients;
     }
 
-    public HashMap<String,Integer> getIngredients (){
-        return ingredients;
+    public int getIngredients (String key){
+
+        return ingredients.get(key);
     }
 }

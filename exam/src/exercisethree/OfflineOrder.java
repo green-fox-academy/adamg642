@@ -1,6 +1,6 @@
 package exercisethree;
 
-public class OfflineOrder {
+public class OfflineOrder extends Orders {
     private int table;
 
     public OfflineOrder(){
