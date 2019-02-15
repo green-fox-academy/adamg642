@@ -27,6 +27,7 @@ public class Restaurant {
             }
 
         }
+
         if (decider) {
             for (String key : invertory.keySet()
             ) {
@@ -41,10 +42,15 @@ public class Restaurant {
                     invertory.put(key, invertory.get(key) - all);
                 }
             }
-        } else {
+            orders.deliver();
+        }
+
+        else {
             if (orders.getClass().equals("OnlineOrder")) {
                 orders.delay();
-            } else {
+            }
+
+            else {
                 orders.reject();
             }
 
