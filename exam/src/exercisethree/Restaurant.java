@@ -11,7 +11,6 @@ public class Restaurant {
 
     public Orders recieveOrders(Orders orders) {
         boolean decider = true;
-       // int all = 0;
         for (String key : invertory.keySet()
         ) {
             int all = 0;
@@ -28,7 +27,6 @@ public class Restaurant {
                 decider = false;
             }
 
-
         }
         if (decider) {
             for (String key : invertory.keySet()
@@ -44,8 +42,7 @@ public class Restaurant {
                     invertory.put(key, invertory.get(key) - all);
                 }
             }
-        }
-        else  {
+        } else {
             if (orders.getClass().equals("OnlineOrder")) {
                 orders.delay();
             } else {
