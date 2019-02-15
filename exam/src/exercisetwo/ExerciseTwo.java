@@ -14,8 +14,6 @@ import java.util.regex.PatternSyntaxException;
 
 public class ExerciseTwo {
     HashMap<String,Integer> hashMap = new HashMap<>();
-
-
     List<String> lines;
 
     public static void main(String[] args) {
@@ -48,7 +46,9 @@ public class ExerciseTwo {
                     int helpInt2;
                     helpInt = Integer.parseInt(helpStringArray[i]);
                     if (i == 0) {
+
                         //helpInt = Integer.parseInt(helpStringArray[k]);
+
                         if (hashMap.containsKey("matReview")){
                         helpInt2 = helpInt + hashMap.get("matReview");
                         hashMap.put("matReview",helpInt2);
@@ -91,8 +91,9 @@ public class ExerciseTwo {
                 for (String name: hashMap.keySet()){
 
                     String key =name.toString();
+                    double avarage = (double) hashMap.get(name)/lines.size();
                     String value = hashMap.get(name).toString();
-                    System.out.println(key + " " + value);
+                    System.out.println(key + " " + value+ "  avarage: "+avarage);
 
 
                 }
