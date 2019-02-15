@@ -19,13 +19,29 @@ public class ExerciseOneMain {
     }
 
     public ArrayList<Integer> arrPlusNthMultiplyMax(ArrayList<Integer> arr, int n){
-        int helpNum = 0;
+        int helpNum = arr.get(0);
         ArrayList<Integer> newArr = new ArrayList<>();
-
+/*
         System.out.println(Collections.max(arr));
         newArr = arr;
-        newArr.set(n,Collections.max(arr)*newArr.get(n));
+        newArr.set(n,Collections.max(arr)*newArr.get(n));*/
 
+        for (int i = 0; i < arr.size();i++){
+            if (i < arr.size()-1) {
+                if (arr.get(i) < arr.get(i + 1)) {
+                    helpNum = arr.get(i + 1);
+                    System.out.println(helpNum);
+                }
+            }
+            else {
+                if (helpNum < arr.get(i)){
+                    helpNum = arr.get(i);
+                }
+            }
+        }
+        System.out.println(helpNum);
+        newArr = arr;
+        newArr.set(n-1,helpNum*newArr.get(n-1));
 
 
         return newArr;
