@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+    Hello World!
+    <header>
+        <table>
+            <tr>
+                <th><a href="/cheapestFirst">CheapestFirs</a></th>
+                <th><a href="/webshop">webshop</a></th>
+                <th><a href="/only-avaiable">only avalibe</a></th>
+                <th><a href="/avarage">Avarage</a></th>
+            </tr>
+        </table>
+    </header>
+
+    <form action="/search" method="post">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="searched">
+        </div>
+
+    </form>
+
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantitiy</th>
+        </tr>
+        <tr th:each="item : ${items}">
+            <td th:text="${item.getName()}"></td>
+            <td th:text="${item.getDestripction()}"></td>
+            <td th:text="${item.getPrice()}"></td>
+            <td th:text="${item.getQuantity()}"></td>
+            ...
+        </tr>
+
+    </table>
+
+
+</body>
+
+
+</html>
