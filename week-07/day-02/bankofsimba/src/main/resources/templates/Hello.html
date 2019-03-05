@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ Hello World!
+    <span th:text="|${bankacc.getName()}|"> </span>
+    <p th:text="'Hello, ' + ${bankacc.getName()} + '!'"/>
+    <td> <span th:text="${#numbers.formatDecimal(bankacc.getBalance(), 0, 'COMMA', 2, 'POINT')}">10.00</span> Zebra</td>
+
+    <span th:text="|${strOne}|"></span>
+    <span th:utext="|${strOne}|"></span>
+</body>
+</html>
