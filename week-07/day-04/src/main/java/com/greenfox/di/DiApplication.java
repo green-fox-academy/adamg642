@@ -12,10 +12,12 @@ public class DiApplication implements CommandLineRunner {
         SpringApplication.run(DiApplication.class, args);
     }
     private SpellChecker checker;
+    private Printer printer;
 
     @Autowired
-    DiApplication(SpellChecker checker) {
+    DiApplication(SpellChecker checker, Printer printer) {
         this.checker = checker;
+        this.printer = printer;
     }
 
    /* public static void main(String[] args) {
@@ -25,5 +27,8 @@ public class DiApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         checker.checkSpelling();
+        printer.log("Hello World!");
     }
+
+
 }
