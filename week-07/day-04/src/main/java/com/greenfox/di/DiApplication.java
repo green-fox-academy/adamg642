@@ -13,11 +13,13 @@ public class DiApplication implements CommandLineRunner {
     }
     private SpellChecker checker;
     private Printer printer;
+    private MyColor myColor;
 
     @Autowired
-    DiApplication(SpellChecker checker, Printer printer) {
+    DiApplication(SpellChecker checker, Printer printer, MyColor myColor) {
         this.checker = checker;
         this.printer = printer;
+        this.myColor = myColor;
     }
 
    /* public static void main(String[] args) {
@@ -28,6 +30,8 @@ public class DiApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
         checker.checkSpelling();
         printer.log("Hello World!");
+        myColor.printColor();
+
     }
 
 
