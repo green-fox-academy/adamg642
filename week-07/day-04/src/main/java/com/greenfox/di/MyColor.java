@@ -24,6 +24,6 @@ public interface MyColor {
 
 class MyColorzBlue implements MyColor  {
     public void printColor() {
-        System.out.println("blue");
+
     }
 }
