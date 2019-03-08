@@ -1,4 +1,4 @@
-package com.greenfox.hm.controller;
+package com.greeenfox.hm;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

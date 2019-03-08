@@ -1,14 +1,13 @@
-package com.greeenfox.hm;
+package com.greenfox.tamagochi;
 
-import com.greeenfox.hm.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HmApplication {
+public class TamagochiApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(HmApplication.class, args);
+        SpringApplication.run(TamagochiApplication.class, args);
     }
 
 }

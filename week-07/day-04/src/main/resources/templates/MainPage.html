@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
+
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
+<body th:bgcolor="${color}">
     HEllo World!
+    <a th:style="${linkColor}" href="http://localhost:8080/useful/email?email=is@this.valid">valid email address in green</a>
+    <a th:style="${linkColor}" href="http://localhost:8080/useful/email?email=not_valid_email">not valid email address in red</a>
+    <a th:style="${linkColor}">valami</a>
+    <span th:text="${color}"  > </span>
+<span th:bgcolor="${color}"  > </span>
 </body>
 </html>
