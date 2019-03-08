@@ -35,6 +35,10 @@ public class Fox {
         return trickList;
     }
 
+    public void addToTrickList(String trick) {
+        trickList.add(trick);
+    }
+
     public void setFood(String food) {
         this.food = food;
     }

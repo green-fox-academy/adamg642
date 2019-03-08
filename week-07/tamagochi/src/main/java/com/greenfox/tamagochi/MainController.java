@@ -41,9 +41,17 @@ public class MainController {
 
         if (actualFox.getTrickList().isEmpty()) {
             trickListEmptyText = "No Trick Yet";
+        } else {
+            trickList = actualFox.getTrickList();
         }
 
+        String petNameLinkTrick = "/trickCenter?name="+name;
+        model.addAttribute("petNameLinkTrick",petNameLinkTrick);
         System.out.println(petFood+" petfood");
+        String petNameLinkNut = "/nutrionStore?name="+name;
+        model.addAttribute("petNameLinkNut",petNameLinkNut);
+        String petNameLinkInf = "/?name="+name;
+        model.addAttribute("petNameLinkInf",petNameLinkInf);
         model.addAttribute("petName",name);
         model.addAttribute("petFood",petFood);
         model.addAttribute("petDrink",petDrink);
@@ -91,7 +99,13 @@ public class MainController {
     public String getNutrionStore(@RequestParam String name,Model model) {
       /*  System.out.println("Drink Isget "+drink);
         System.out.println("Food get"+food);*/
-
+        model.addAttribute("petName",name);
+        String petNameLinkNut = "/nutrionStore?name="+name;
+        model.addAttribute("petNameLinkNut",petNameLinkNut);
+        String petNameLinkInf = "/?name="+name;
+        model.addAttribute("petNameLinkInf",petNameLinkInf);
+        String petNameLinkTrick = "/trickCenter?name="+name;
+        model.addAttribute("petNameLinkTrick",petNameLinkTrick);
         System.out.println(name);
         return "nutrionStore";
     }
@@ -107,6 +121,27 @@ public class MainController {
         System.out.println("Food "+food);
 
         String query = "/"+"?name="+actualFox.getName();
+        return new RedirectView(query);
+    }
+
+    @RequestMapping("/trickCenter")
+    public String getTrickCenter(@RequestParam String name,Model model) {
+        String petNameLinkNut = "/nutrionStore?name="+name;
+        model.addAttribute("petNameLinkNut",petNameLinkNut);
+        String petNameLinkInf = "/?name="+name;
+        model.addAttribute("petNameLinkInf",petNameLinkInf);
+        String petNameLinkTrick = "/trickCenter?name="+name;
+        model.addAttribute("petNameLinkTrick",petNameLinkTrick);
+
+        return "trickCenter";
+    }
+
+    @PostMapping("/trickCenter")
+    public RedirectView getTrickCenterPost(@RequestParam(name="trick") String trick) {
+        actualFox.addToTrickList(trick);
+        foxList.remove(actualFox);
+        foxList.add(actualFox);
+        String query = "/trickCenter"+"?name="+actualFox.getName();
         return new RedirectView(query);
     }
 }
