@@ -35,5 +35,13 @@ public class Fox {
         return trickList;
     }
 
+    public void setFood(String food) {
+        this.food = food;
+    }
+
+    public void setDrink(String drink) {
+        this.drink = drink;
+    }
+
 
 }

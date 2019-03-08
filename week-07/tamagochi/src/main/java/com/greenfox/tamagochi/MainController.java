@@ -1,5 +1,6 @@
 package com.greenfox.tamagochi;
 
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -42,6 +43,7 @@ public class MainController {
             trickListEmptyText = "No Trick Yet";
         }
 
+        System.out.println(petFood+" petfood");
         model.addAttribute("petName",name);
         model.addAttribute("petFood",petFood);
         model.addAttribute("petDrink",petDrink);
@@ -82,6 +84,29 @@ public class MainController {
         for (Fox fox: foxList) {
             System.out.println(fox.getName());
         }
+        return new RedirectView(query);
+    }
+
+    @RequestMapping("/nutrionStore")
+    public String getNutrionStore(@RequestParam String name,Model model) {
+      /*  System.out.println("Drink Isget "+drink);
+        System.out.println("Food get"+food);*/
+
+        System.out.println(name);
+        return "nutrionStore";
+    }
+
+    @PostMapping("/nutrionStore")
+    public RedirectView getNutrionStorePost( @RequestParam(name="food") String food,
+                                      @RequestParam(name="drink") String drink, Model model) {
+        foxList.remove(actualFox);
+        actualFox.setDrink(drink);
+        actualFox.setFood(food);
+        foxList.add(actualFox);
+        System.out.println("Drink Is "+drink);
+        System.out.println("Food "+food);
+
+        String query = "/"+"?name="+actualFox.getName();
         return new RedirectView(query);
     }
 }

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title> Ti </title>
+</head>
+<body>
+ NutrionStore
+<div>
+    <form action="/nutrionStore" method="post">
+        <input list="foods" name="food">
+        <datalist id="foods">
+            <option value="Cat">
+            <option value="Mouse">
+            <option value="Bird">
+            <option value="Salad">
+            <option value="Tomato">
+        </datalist>
+        <a>Change</a>
+        <input list="drinks" name="drink">
+        <datalist id="drinks">
+            <option value="Water">
+            <option value="Wine">
+            <option value="Pepsi">
+            <option value="Blood">
+            <option value="TomatoSoup">
+        </datalist>
+        <input type="submit">
+    </form>
+</div>
+
+
+ </form>
+</body>
+</html>
