@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <ul>
+        <li><a href="url">link text</a></li>
+    </ul>
+</div>
+<div>
+    <img src="greenfox.png" alt="Green Fox">
+</div>
+<div>
+    <span th:text="${petName}">Here Some Text</span>
+    <span th:text="${petFood}">Here Some Text</span>
+    <span th:text="${petDrink}">Here Some Text</span>
+</div>
+
+<h1>This is heading 1</h1>
+<ul>
+    <tr th:each="trick : ${trickList}">
+        <td th:text="${trick}">1</td>
+    </tr>
+</ul>
+<span th:text="${trickListEmptyText}"></span>
+</body>
+</html>
