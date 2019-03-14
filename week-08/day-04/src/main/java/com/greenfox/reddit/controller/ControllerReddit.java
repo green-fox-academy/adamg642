@@ -24,7 +24,8 @@ public class ControllerReddit {
     @RequestMapping("/")
     public String getMainPage (Model model) {
 
-        model.addAttribute("redditPostList",redditService.getRedditPostList());
+        model.addAttribute("redditPostList",redditService.getFirstTen());
+        //  model.addAttribute("redditPostList",redditService.getRedditPostList());
 
         return "mainredditpage";
     }
@@ -41,7 +42,7 @@ public class ControllerReddit {
         RedditPost redditPost = new RedditPost();
         redditPost.setUrl(url);
         redditPost.setTitle(title);
-
+        System.out.println(redditPost.getPublicationTime());
         redditService.addToDataBase(redditPost);
         return "redirect:createpost";
     }
@@ -53,7 +54,8 @@ public class ControllerReddit {
         RedditPost redditPost = redditService.getRedditPostByIdFromDataBase(id);
         redditService.upVote(redditPost);
 
-        model.addAttribute("redditPostList",redditService.getRedditPostList());
+        model.addAttribute("redditPostList",redditService.getFirstTen());
+      //  model.addAttribute("redditPostList",redditService.getRedditPostList());
         return "mainredditpage";
     }
 
@@ -63,7 +65,8 @@ public class ControllerReddit {
 
         RedditPost redditPost = redditService.getRedditPostByIdFromDataBase(id);
         redditService.downVote(redditPost);
-        model.addAttribute("redditPostList",redditService.getRedditPostList());
+        model.addAttribute("redditPostList",redditService.getFirstTen());
+        //  model.addAttribute("redditPostList",redditService.getRedditPostList());
         return "mainredditpage";
     }
 }

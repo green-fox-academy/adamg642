@@ -1,18 +1,39 @@
 package com.greenfox.reddit.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.DynamicUpdate;
+
+import javax.persistence.*;
+import java.util.Date;
+
+@Data
 @Entity
 public class RedditPost {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     private Long id;
+    @Temporal(TemporalType.TIME)
+    Date publicationTime;
     private String url;
     private String title;
     private int likeNum;
+
+    public RedditPost () {
+        this.publicationTime = new Date();
+    }
+
+    public Date getPublicationTime() {
+        return publicationTime;
+    }
+
+    public void setPublicationTime(Date publicationTime) {
+        this.publicationTime = publicationTime;
+    }
+
 
     public String getTitle() {
         return title;
