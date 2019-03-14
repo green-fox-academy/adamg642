@@ -29,5 +29,5 @@ public class RedditPost {
     public void setLikeNum(int likeNum) {
         this.likeNum = likeNum;
     }
-    
+
 }
