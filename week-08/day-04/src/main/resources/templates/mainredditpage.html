@@ -6,11 +6,14 @@
 </head>
 <body>
     <tr th:each="post : ${redditPostList}">
+        <td><a th:href="@{'/plus/?id='+${post.getId()}}" th:method="get">+</a></td>
+        <td><a th:href="@{'/minus/?id='+${post.getId()}}" th:method="get">-</a></td>
         <td th:text="${post.getLikeNum()}"></td>
-        <td th:text="${post.getUrl()}"></td>
         <td th:text="${post.getTitle()}"></td>
+        <td><a th:text="${post.getUrl()}" th:href="${post.getUrl()}"></a></td>
         <td th:text="${post.getId()}"></td>
 
+        <br>
     </tr>
 </body>
 </html>

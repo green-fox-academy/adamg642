@@ -28,4 +28,27 @@ public class RedditService {
                 .forEach(redditPost -> redditPostList.add(redditPost));
         return redditPostList;
     }
+
+    public void upVote (RedditPost redditPost) {
+        redditPost.setLikeNum(redditPost.getLikeNum()+1);
+        repositoryReddit.save(redditPost);
+    }
+
+    public void downVote (RedditPost redditPost) {
+        redditPost.setLikeNum(redditPost.getLikeNum()-1);
+        repositoryReddit.save(redditPost);
+    }
+
+    public RedditPost getRedditPostByIdFromDataBase (Long id) {
+        RedditPost redditPost = new RedditPost();
+        redditPost.setTitle("Not Find");
+        for (int i = 0; i < getRedditPostList().size() ; i++) {
+            if (getRedditPostList().get(i).getId() == id) {
+                return getRedditPostList().get(i);
+            }
+        }
+        return redditPost;
+    }
+
+
 }
