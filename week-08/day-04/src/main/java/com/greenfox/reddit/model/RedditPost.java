@@ -30,4 +30,8 @@ public class RedditPost {
         this.likeNum = likeNum;
     }
 
+    public Long getId() {
+        return id;
+    }
+
 }
