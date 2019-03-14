@@ -6,6 +6,7 @@ import com.greenfox.reddit.service.RedditService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -23,11 +24,26 @@ public class ControllerReddit {
 
     @RequestMapping("/")
     public String getMainPage (Model model) {
-        RedditPost redditPost = new RedditPost();
-        redditPost.setUrl("Tester");
-        redditService.addToDataBase(redditPost);
+
         model.addAttribute("redditPostList",redditService.getRedditPostList());
 
         return "mainredditpage";
+    }
+
+    @RequestMapping("/createpost")
+    public String getCreatePost() {
+        return "createpost";
+    }
+
+
+    @PostMapping("/createpost")
+    public String postCreatePost(@RequestParam(name = "title") String title,
+                                 @RequestParam(name = "url") String url) {
+        RedditPost redditPost = new RedditPost();
+        redditPost.setUrl(url);
+        redditPost.setTitle(title);
+
+        redditService.addToDataBase(redditPost);
+        return "redirect:createpost";
     }
 }

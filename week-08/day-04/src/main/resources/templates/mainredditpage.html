@@ -8,6 +8,7 @@
     <tr th:each="post : ${redditPostList}">
         <td th:text="${post.getLikeNum()}"></td>
         <td th:text="${post.getUrl()}"></td>
+        <td th:text="${post.getTitle()}"></td>
         <td th:text="${post.getId()}"></td>
 
     </tr>
